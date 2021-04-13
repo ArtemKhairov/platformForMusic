@@ -13,8 +13,8 @@ interface TrackItemProps {
 const TrackItem: React.FC<TrackItemProps> = ({ track, active = true }) => {
   const router = useRouter();
   return (
-    <Card className={styles.track}>
-      <IconButton>{!active ? <PlayArrow /> : <Pause />}</IconButton>
+    <Card className={styles.track} onClick={()=>router.push('/tracks/'+ track._id)}>
+      <IconButton onClick={(e)=>e.stopPropagation()}>{!active ? <PlayArrow /> : <Pause />}</IconButton>
       <img width={70} height={70} src={track.picture} />
       <Grid
         container
@@ -25,7 +25,7 @@ const TrackItem: React.FC<TrackItemProps> = ({ track, active = true }) => {
         <div style={{ fontSize: 12, color: "gray" }}>{track.artist}</div>
       </Grid>
       {active && <div>01:44/24:88</div>}
-      <IconButton style={{ marginLeft: "auto" }}>
+      <IconButton onClick={(e)=>e.stopPropagation()} style={{ marginLeft: "auto" }}>
         <Delete />
       </IconButton>
     </Card>
