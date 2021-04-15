@@ -12,7 +12,7 @@ const TrackPage = () => {
     artist: "Adolf",
     listens: 1,
     audio:
-      "https://github.com/utimur/music-platform-course/blob/master/client/pages/tracks/index.tsx",
+      "https://localhost:5000/audio/first.mp3",
     picture:
       "https://wowslider.com/sliders/demo-57/data1/images/raccoon365366.jpg",
     text: "123",
